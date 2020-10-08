@@ -47,6 +47,6 @@ func (d Dictionary) Update(word, def string) error {
 }
 
 // Delete word
-func (d Dictionary) Delete(word string) error {
+func (d Dictionary) Delete(word string) {
 	delete(d, word)
 }
