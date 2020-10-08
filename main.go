@@ -1,13 +1,21 @@
 package main
 
 import (
-	"github.com/JominJun/learngo/accounts"
+	"github.com/JominJun/learngo/mydict"
 	"fmt"
-	//"log"
 )
 
 func main(){
-	account := accounts.NewAccount("minjun")
-	account.Deposit(10)
-	fmt.Println(account)
+	dictionary := mydict.Dictionary{}
+	baseWord := "hello"
+
+	dictionary.Add(baseWord, "First")
+	err := dictionary.Update(baseWord, "Second")
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	word, _ := dictionary.Search(baseWord)
+	fmt.Println(word)
 }
